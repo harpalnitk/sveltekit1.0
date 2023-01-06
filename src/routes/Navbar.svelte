@@ -15,7 +15,7 @@ const navs = [
         <h1>Start Bootstrap</h1>
         <ul>
             {#each navs as {title,href}}
-            <li><a {href} class:active = {routeId == href}>{title}</a></li>
+            <li><a {href} class:active = {routeId == href} {title}>{title}</a></li>
             {/each}
            
      
