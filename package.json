@@ -20,5 +20,8 @@
 		"vite": "^4.0.0",
 		"yup": "^0.32.11"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"firebase": "^9.15.0"
+	}
 }
