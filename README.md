@@ -12,3 +12,16 @@ in vite.config.js below code is added
 		},
 
         because we have placed styles.css in static folder ; to access styles.css in our project
+
+
+## TO USE SASS
+
+npm install --save-dev svelte-preprocess
+npm install -D sass
+
+and in svelte.config.js add 
+
+	preprocess: preprocess({
+		//this is needed because in preprocessing SEO  optimizations are lost
+		preserve: ['ld+json']
+	  }),

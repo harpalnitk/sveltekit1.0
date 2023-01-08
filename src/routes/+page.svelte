@@ -1,12 +1,14 @@
 <script>
+  import Seo from "$lib/Seo.svelte";
 
 
-    import Hero from "./Hero.svelte";
+
+  
     import What from "./What.svelte";
 
 export let data;
 
-const {posts} = data;
+const {posts, postsFromApi} = data;
 //OR
 // $: ({posts} = data);
 
@@ -14,7 +16,7 @@ const {posts} = data;
     
 </script>
 
-<Hero/>
+
 <What/>
 
 <div class="container">
@@ -32,6 +34,18 @@ const {posts} = data;
     
     {/each}
     </div>
+
+    <div class='grid'>
+        {#each postsFromApi as {id, title, image, body}}
+        <div>
+            <h2>{title.substring(0, 20)}</h2>
+            <img src={image} alt={title} />
+            <p>{body.substring(0, 80)}</p>
+          </div>
+        {/each}
+        </div>
+
+    <!-- Posts FROm API -->
     <!-- {/await} -->
 </div>
 
@@ -52,3 +66,4 @@ const {posts} = data;
     }
 </style>
 
+<Seo title="Business Frontpage" description="This is homepage" type="WebSite" />

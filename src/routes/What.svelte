@@ -1,7 +1,7 @@
 <script>
 
   import Button from "$lib/Button.svelte";
-
+  import Contact from "./Contact.svelte";
 </script>
 <div class='grid container'>
     <div class="what">
@@ -10,14 +10,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eos, cum voluptas voluptates hic delectus, vel asperiores aspernatur fugiat officiis, itaque atque vero quo provident.</p>
     <Button class='secondary' id='a-button' size='small'>Call to Action >></Button>
     </div>
-    <div class='contact'>
-        <h3>Contact Us</h3>
-        <p><strong>Start Bootstrap</strong></p>
-        <p>3481 Melrose Place</p>
-        <p>Beverly Hills, CA 90210</p>
-        <p>P: (123) 456-7890</p>
-        <p>E:<a href="mailto:name@example.com">name@example.com</a></p> 
-    </div>
+    <Contact />
 </div>
 
 <style>
