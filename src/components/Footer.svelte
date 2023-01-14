@@ -9,6 +9,7 @@ Copyright @ Your Website {year}
 
 <style>
     footer{
+        margin-top: auto;
         padding: 3em 0;
         background: #343a40;
         color: white;

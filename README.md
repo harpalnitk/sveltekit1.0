@@ -25,3 +25,17 @@ and in svelte.config.js add
 		//this is needed because in preprocessing SEO  optimizations are lost
 		preserve: ['ld+json']
 	  }),
+
+### Deployed on vercel
+to deploy we need to add adapters in svelte project
+default adapter is import adapter from '@sveltejs/adapter-auto';
+
+however for vercel deployment we can use adapter-auto
+
+## steps to deploy
+1. log in to vercel using github 
+2. add new project from github
+3. import
+4. deploy
+
+

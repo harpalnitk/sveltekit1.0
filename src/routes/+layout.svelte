@@ -3,13 +3,22 @@
 import {loginWithGoogle} from '../components/Auth.svelte';
 
    import '../style.css';
-  import Footer from './Footer.svelte';
-  import Hero from './Hero.svelte';
-    import Navbar from './Navbar.svelte';
+  import Footer from '../components/Footer.svelte';
+ 
+    import Navbar from '../components/Navbar.svelte';
 </script>
-<Navbar/>
-<Hero/>
-<button on:click={loginWithGoogle}>Login with Google</button>
+<!-- <button on:click={loginWithGoogle}>Login with Google</button> -->
+<div class="app">
+  <Navbar/>
+  <slot/>
+  <Footer/>
+</div>
 
-    <slot/>
-    <Footer/>
+<style>
+  .app{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+

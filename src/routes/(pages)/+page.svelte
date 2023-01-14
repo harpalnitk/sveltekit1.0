@@ -4,7 +4,7 @@
 
 
   
-    import What from "./What.svelte";
+    import What from "../../components/What.svelte";
 
 export let data;
 

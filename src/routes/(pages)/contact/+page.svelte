@@ -81,6 +81,7 @@
   <style>
     .container {
       padding: 2em 0;
+      width: 100%;
     }
     h2 {
       font-weight: 500;
