@@ -38,4 +38,12 @@ however for vercel deployment we can use adapter-auto
 3. import
 4. deploy
 
+### Dark Mode Toggle
+local storage and session storage are
+not available on server
+therefore we use cookies for storing dark-mode flag
+cookies accessible to the server because they
+come along with each request to the server
+
+
 
