@@ -45,5 +45,10 @@ therefore we use cookies for storing dark-mode flag
 cookies accessible to the server because they
 come along with each request to the server
 
+## user can also set dark mode for all websites through
+browsers rendering tab
+we have to take care of that also in our code
+
+
 
 
