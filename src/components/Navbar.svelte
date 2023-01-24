@@ -8,6 +8,7 @@
     { title: 'About', href: '/about' },
     { title: 'Blog', href: '/blog' },
     { title: 'Services', href: '/services' },
+    { title: 'Todos', href: '/todo-list' },
     { title: 'Contact Us', href: '/contact' },
   ];
 
