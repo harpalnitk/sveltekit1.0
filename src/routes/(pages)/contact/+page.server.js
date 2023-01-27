@@ -1,5 +1,5 @@
 import { fail } from "@sveltejs/kit";
-import {object, string, number, date, InferType} from 'yup';
+import {object, string} from 'yup';
 
 export const actions = {
     // default: async (event)=>{   //we will destructure event to get request object

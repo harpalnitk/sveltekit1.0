@@ -10,6 +10,7 @@
     { title: 'Services', href: '/services' },
     { title: 'Todos', href: '/todo-list' },
     { title: 'Contact Us', href: '/contact' },
+    { title: 'Dashboard', href: '/dashboard' },
   ];
 
   let currentTheme = '';
