@@ -9,6 +9,9 @@ export const handle = async ({ event, resolve }) => {
 //URL
 console.log(event.route.id);
 //protect some routes
+//hooks will work only if there is a server file in the route
+//so using hooks is not the best method for protecting
+//routes
 if(event.route.id?.startsWith("/(app)")){
     const access = event.cookies.get("access");
     if(!(access=== "true"))

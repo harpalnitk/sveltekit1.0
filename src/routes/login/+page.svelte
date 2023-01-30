@@ -1,6 +1,20 @@
+<script>
+  export let form;
+  console.log(form);
+</script>
 <div class="container">
-  <h1>Login</h1>
+  <h2>Login</h2>
+  {#if form?.message}
+     <p class='red'>{form.message}</p>
+  {/if}
   <form method="POST">
-    <button>Gain Access</button>
+    <div><input type="email" name='email' value={form?.email || ""}></div>
+    <div><input type="password" name='password'></div>
+    <button>Login</button>
   </form>
 </div>
+
+<style>
+  .red{
+    color: red;}
+</style>
