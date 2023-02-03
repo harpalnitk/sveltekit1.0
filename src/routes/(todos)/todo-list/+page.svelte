@@ -1,4 +1,5 @@
 <script>
+  import { enhance } from "$app/forms";
     export let data;
     //After Edir : How did the new title show up like that? It was automatic. Once
     //  we redirected to the /list page, SvelteKit automatically
@@ -6,6 +7,13 @@
     //    regardless
     $: ({ todos, tags } = data);
   </script>
+
+<div class="search-form">
+  <form action="/todo-list">
+    <label>Search</label>
+    <input autofocus name="search" />
+  </form>
+</div>
   
   <table cellspacing="10" cellpadding="10">
     <thead>
@@ -24,6 +32,15 @@
         <td>{t.assigned}</td>
         <td><a href="/todo-detail?id={t.id}">Edit</a></td>
       </tr>
+      <tr>
+				<td colspan="4">
+					<form use:enhance method="post" action="?/editTodo">
+						<input name="id" value={t.id} type="hidden" />
+						<input name="title" value={t.title} />
+						<button>Save</button>
+					</form>
+				</td>
+			</tr>
       {/each}
     </tbody>
   </table>
@@ -32,4 +49,7 @@
     th {
       text-align: left;
     }
+    .search-form {
+		margin: 20px;
+	}
   </style>
