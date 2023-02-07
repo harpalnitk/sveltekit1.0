@@ -1,3 +1,5 @@
+//https://css-tricks.com/caching-data-in-sveltekit/
+
 //It’s relatively easy if we’re on the
 //  server: we can call await parent() to
 //   get the data from parent layouts. 

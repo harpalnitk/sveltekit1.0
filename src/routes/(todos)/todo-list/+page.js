@@ -33,19 +33,30 @@ import { getCurrentCookieValue } from '$lib/util/cookieUtils.js';
 //     to get the data from parent layouts. 
 //     But on the client, we’ll need to use 
 //     some gross code to parse document.cookie
-export async function load({ fetch, parent, url, setHeaders }) {
+export async function load({ fetch, parent, url, setHeaders, depends  }) {
+
+
+
+	depends('reload:todos');
+
 	const parentData = await parent();
 //getCurrentCookieValue('todos-cache') has a check in it to see if 
 // we’re on the client (by checking the type of document), and returns 
 // nothing if we are, at which point we know we’re on the server. Then
 //  it uses the value from our layout.
-	const cacheBust = getCurrentCookieValue('todos-cache') || parentData.todosCacheBust;
+	const cacheBust = getCurrentCookieValue('todos-cache') || parentData.todosCacheBust; //parentData.todosCacheBust is a value loaded in base layout file at root of app
 	const search = url.searchParams.get('search') || '';
-console.log('cacheBust', cacheBust)
+    //console.log('cacheBust', cacheBust)
 	const resp = await fetch(`/api/todos?search=${encodeURIComponent(search)}&cache=${cacheBust}`);
 	const todos = await resp.json();
 
+	// return {
+	// 	todos
+	// };
+
+	// Above code changed to stores for immediate updates
+
 	return {
-		todos
+		todos: writable(todos),
 	};
 }

@@ -4,6 +4,9 @@ import { getTodo, updateTodo, wait } from '$lib/data/todoData';
 //  /list folder. (Yes, a +page.server.js file can co-exist next to
 //      a +page.js file.)
 export const actions = {
+	async reloadTodos({ cookies }) {
+		cookies.set('todos-cache', +new Date(), { path: '/', httpOnly: false });
+	},
 	async editTodo({ request, cookies }) {
 		const formData = await request.formData();
 

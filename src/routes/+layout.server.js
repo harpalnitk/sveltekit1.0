@@ -10,6 +10,8 @@ export function load({ cookies, isDataRequest }) {
     //     default behavior). isDataRequest indicates those re-runs,
     //      and so we only set the cookie if that’s false; otherwise, 
     //      we send along what’s already there.
+
+    console.log('todo-cache cookis set on app startup -> isDataRequest: ', isDataRequest);
 	const initialRequest = !isDataRequest;
 
 	const cacheValue = initialRequest ? +new Date() : cookies.get('todos-cache');
